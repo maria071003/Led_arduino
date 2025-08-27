@@ -1,28 +1,29 @@
 # Led_arduino
 #  Projeto: Acendendo um LED com ESP32
 
-Este projeto mostra passo a passo como montar um circuito simples com ESP32 para acender um LED, utilizando uma protoboard, resistor e jumpers. Cada passo está documentado com imagens reais para facilitar a reprodução por iniciantes.
+Este projeto mostra passo a passo como montar um circuito simples com ESP32 para acender um LED, utilizando uma protoboard, resistor e jumpers. Cada passo está documentado com imagens reais.
 
 ---
 
 ## Materiais Utilizados
 
-- 1x ESP32 DevKit V1
-- 1x LED (vermelho)
-- 1x Resistor 220Ω ou 330Ω
+- 1x ESP32
+- 1x LED
+- 1x Resistor 220Ω
 - 1x Protoboard
-- 2x Jumpers macho-macho
+- 2x Jumpers 
 - 1x Cabo USB
 
 ---
 
-##  Passo a Passo com Imagens
+##  Passo a Passo
 
 ---
 
-###  Etapa 1: Visão geral dos componentes
+###  Etapa 1: Visão geral dos objetos utilizados
 
-![Etapa 1](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06.jpeg)
+![Etapa 1](![WhatsApp Image 2025-08-27 at 13 21 06](https://github.com/user-attachments/assets/c7711a04-7fd8-4ff1-aeda-b867ffcdaa61)
+)
 
 > Nessa imagem temos o ESP32, protoboard, LED, resistor e cabos jumper que serão utilizados no projeto.
 
