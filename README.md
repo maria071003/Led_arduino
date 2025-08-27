@@ -100,7 +100,7 @@ Agora estamos prontos para subir o código!
 
 ---
 
-## 9️⃣ Código para piscar o LED
+## Código para piscar o LED
 
 Abra a **Arduino IDE**, cole o código abaixo e envie para a placa:
 
