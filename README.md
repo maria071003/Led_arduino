@@ -17,7 +17,7 @@ Ideal para iniciantes em eletrônica e Internet das Coisas (IoT).
 
 ---
 
-## 1️⃣ ESP32 e Protoboard separados
+## ESP32 e Protoboard separados
 
 Antes de iniciar a montagem, observe o ESP32 e a protoboard ainda não conectados.
 
@@ -30,7 +30,8 @@ Antes de iniciar a montagem, observe o ESP32 e a protoboard ainda não conectado
 
 Insira o ESP32 no centro da protoboard, com espaço livre nas laterais para conectar os fios e componentes.
 
-![02 - ESP32 encaixado](images/02.jpeg)
+![02 - ESP32 encaixado](![2 img](https://github.com/user-attachments/assets/f7d46853-183e-42b3-8aa7-65a12c6bf3a9)
+)
 
 ---
 
