@@ -1,99 +1,112 @@
-# Led_arduino
-#  Projeto: Acendendo um LED com ESP32
+#  Projeto: Acender um LED com ESP32 - Passo a Passo com Imagens
 
-Este projeto mostra passo a passo como montar um circuito simples com ESP32 para acender um LED, utilizando uma protoboard, resistor e jumpers. Cada passo está documentado com imagens reais.
-
----
-
-## Materiais Utilizados
-
-- 1x ESP32
-- 1x LED
-- 1x Resistor 220Ω
-- 1x Protoboard
-- 2x Jumpers 
-- 1x Cabo USB
+Tutorial prático e ilustrado para montar um circuito básico com ESP32 e acender um LED via código.  
+Ideal para iniciantes em eletrônica e Internet das Coisas (IoT).
 
 ---
 
-##  Passo a Passo
+#  Materiais Utilizados
+
+- ESP32 
+- Protoboard
+- LED 
+- Resistor 220Ω
+- Jumpers (fios)
+- Cabo USB
+- Arduino IDE
 
 ---
 
-###  Etapa 1: Visão geral dos objetos utilizados
+## 1️⃣ ESP32 e Protoboard separados
 
-![Etapa 1](![WhatsApp Image 2025-08-27 at 13 21 06](https://github.com/user-attachments/assets/c7711a04-7fd8-4ff1-aeda-b867ffcdaa61)
+Antes de iniciar a montagem, observe o ESP32 e a protoboard ainda não conectados.
+
+![01 - ESP32 e protoboard](![1 img](https://github.com/user-attachments/assets/5521b7c2-7e0c-4061-a518-3937f3423371)
 )
 
-> Nessa imagem temos o ESP32, protoboard, LED, resistor e cabos jumper que serão utilizados no projeto.
+---
+
+## 2️⃣ ESP32 encaixado na protoboard
+
+Insira o ESP32 no centro da protoboard, com espaço livre nas laterais para conectar os fios e componentes.
+
+![02 - ESP32 encaixado](images/02.jpeg)
 
 ---
 
-###  Etapa 2: ESP32 inserido na protoboard
+## 3️⃣ Conectando o GND com jumper preto
 
-![Etapa 2](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(1).jpeg)
+Ligue o **pino GND** do ESP32 à linha negativa (azul) da protoboard usando um jumper preto.
 
-- O ESP32 foi encaixado no meio da protoboard.
-- Certifique-se de que os pinos não fiquem curtos entre si.
-- Deixe espaço nas laterais para os jumpers.
+![03 - Jumper preto (GND)](images/03.jpeg)
 
 ---
 
-###  Etapa 3: ESP32 fora da protoboard
+## 4️⃣ Ligando o GPIO2 com jumper vermelho
 
-![Etapa 3](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(2).jpeg)
+Conecte o pino **D2 (GPIO2)** do ESP32 à outra linha da protoboard com um jumper vermelho.  
+Esse pino será usado para controlar o LED.
 
-> Visualize os pinos com clareza. Você usará:
-- `GPIO 23` para controlar o LED
-- `GND` para o terra do circuito
-
----
-
-###  Etapa 4: LED e resistor conectados
-
-![Etapa 4](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(3).jpeg)
-
-- Conecte o **ânodo (perna longa)** do LED ao `GPIO 23` do ESP32
-- Conecte o **cátodo (perna curta)** a um resistor
-- O outro lado do resistor vai para o trilho azul da protoboard (GND)
+![04 - Jumper vermelho (GPIO2)](images/04.jpeg)
 
 ---
 
-### 📷 Etapa 5: Conectando o GND do ESP32
+## 5️⃣ Adicionando o resistor
 
-![Etapa 5](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(4).jpeg)
+Coloque um **resistor de 220Ω** conectando a linha do GND (azul) até uma linha onde o LED será ligado.  
+O resistor protege o LED da corrente excessiva.
 
-- Conecte o pino `GND` do ESP32 ao **trilho azul da protoboard**
-- Isso fecha o circuito do LED
-
----
-
-### 📷 Etapa 6: Checagem final antes do upload
-
-![Etapa 6](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(5).jpeg)
-
-> Confira todas as conexões:
-- GPIO 23 -> LED -> Resistor -> GND
-- GND do ESP32 conectado ao trilho azul
+![05 - Resistor adicionado](images/05.jpeg)
 
 ---
 
-### 📷 Etapa 7: Subindo o código via USB
+## 6️⃣ Inserindo o LED (ainda não ligado)
 
-![Etapa 7](./images/WhatsApp%20Image%202025-08-27%20at%2013.21.06%20(6).jpeg)
+Coloque o LED na protoboard:
+- **Perna longa (ânodo)**: onde o pino GPIO2 está
+- **Perna curta (cátodo)**: próxima ao resistor
 
-Abra a **Arduino IDE**, conecte o ESP32 e cole o seguinte código:
+Ainda não conecte os fios!
+
+![06 - LED colocado, mas não ligado](images/06.jpeg)
+
+---
+
+## 7️⃣ LED conectado ao circuito
+
+Agora conecte:
+- Perna longa do LED ao jumper vermelho (GPIO2)
+- Perna curta do LED ao resistor, que está no GND
+
+Circuito completo!
+
+![07 - LED conectado](images/07.jpeg)
+
+---
+
+## 8️⃣ Conectando o ESP32 ao computador
+
+Use um cabo USB para ligar o ESP32 ao seu computador.  
+Agora estamos prontos para subir o código!
+
+![08 - USB conectado](images/08.jpeg)
+
+---
+
+## 9️⃣ Código para piscar o LED
+
+Abra a **Arduino IDE**, cole o código abaixo e envie para a placa:
 
 ```cpp
-int ledPin = 23;
+#define LED 2  // GPIO2
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
+  pinMode(LED, OUTPUT);  // Define o pino como saída
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
+  digitalWrite(LED, HIGH);  // Liga o LED
+  delay(1000);              // Espera 1 segundo
+  digitalWrite(LED, LOW);   // Desliga o LED
+  delay(1000);              // Espera 1 segundo
 }
